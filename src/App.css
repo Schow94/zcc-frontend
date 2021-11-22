@@ -9,13 +9,25 @@
 
 .app-body {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 }
 
 .tickets-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: 50%;
+}
+
+.side-info-container {
+	margin: 2%;
+	width: 30%;
+}
+
+.tickets {
 	margin-bottom: 2em;
 }

@@ -7,6 +7,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Checkbox from "@mui/material/Checkbox";
 
 const Tickets = ({ ticket }) => {
 	const [open, setOpen] = useState(false);
@@ -30,6 +31,7 @@ const Tickets = ({ ticket }) => {
 					Subject
 				</Typography>
 				<Typography variant="h5" component="div">
+					<Checkbox />
 					{ticket.subject}
 				</Typography>
 				<Typography sx={{ mb: 1.5 }} color="text.secondary">
@@ -45,6 +47,7 @@ const Tickets = ({ ticket }) => {
 					Last Updated: {ticket.updated_at}
 				</Typography>
 			</CardContent>
+
 			<CardActions>
 				<Button size="small">
 					<a href={ticket.url}>Learn More</a>
@@ -59,6 +62,7 @@ const Tickets = ({ ticket }) => {
 		<React.Fragment>
 			<CardContent>
 				<Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+					<Checkbox />
 					Subject: {ticket.subject} Status: {ticket.status} Created:
 					{ticket.created_at}
 					<Button size="small" onClick={() => toggleTicket()}>
