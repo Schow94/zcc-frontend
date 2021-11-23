@@ -17,22 +17,36 @@ import "./App.css";
 const API_URL = `http://localhost:5000`;
 
 const App = () => {
+	// State initilizations
 	const [tickets, setTickets] = useState([]);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postsPerPage] = useState(10);
+
+	// Asynchronously fetch ticket data from API
 	const getData = async () => {
-		const res = await axios.get(API_URL);
-		const tickets = res.data.tickets;
-		setTickets(tickets);
+		const res = await axios.get(`${API_URL}/tickets`);
+		const incomingTix = res.data.tickets;
+		// console.log("tickets: ", incomingTix);
+		setTickets(incomingTix);
 	};
 
+	// Fetch API data on initial page load
 	useEffect(() => {
 		getData();
 	}, []);
 
 	const renderTickets = () => {
-		return tickets.map((t) => {
+		return currentTickets.map((t) => {
 			return <Tickets key={t.id} ticket={t} />;
 		});
 	};
+
+	//Get currenPosts
+	const indexOfLastPost = currentPage * postsPerPage; // Page 1 * 10 posts per page --> indexOfLastPost is 10
+	const indexOfFirstPost = indexOfLastPost - postsPerPage; // For Page 1 --> 10 - 10 = 0 --> indexOfFirstPost is 0
+	const currentTickets = tickets.slice(indexOfFirstPost, indexOfLastPost); // slice(0,10)
+
+	const paginate = (num) => setCurrentPage(num);
 
 	return (
 		<div className="App">
@@ -104,7 +118,12 @@ const App = () => {
 				<div className="tickets-container">
 					<h1>Ticket Viewer</h1>
 					<li className="tickets">{renderTickets()}</li>
-					<Pagination />
+					<Pagination
+						postsPerPage={postsPerPage}
+						totalPosts={tickets.length}
+						paginate={paginate}
+						currentPage={currentPage}
+					/>
 				</div>
 			</div>
 		</div>
