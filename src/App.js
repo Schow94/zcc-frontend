@@ -103,7 +103,7 @@ const App = () => {
 				</Box>
 				<div className="tickets-container">
 					<h1>Ticket Viewer</h1>
-					<div className="tickets">{renderTickets()}</div>
+					<li className="tickets">{renderTickets()}</li>
 					<Pagination />
 				</div>
 			</div>

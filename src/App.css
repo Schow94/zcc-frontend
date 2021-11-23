@@ -30,4 +30,5 @@
 
 .tickets {
 	margin-bottom: 2em;
+	list-style-type: none;
 }
