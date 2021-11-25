@@ -32,7 +32,7 @@ const Drawer = styled(MuiDrawer)(({ theme }) => ({
 
 export default function MiniDrawer() {
 	return (
-		<Box sx={{ display: "flex" }} className="sidebar">
+		<Box sx={{ display: "flex" }}>
 			<CssBaseline />
 			<Drawer variant="permanent">
 				<Divider />

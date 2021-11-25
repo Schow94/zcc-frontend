@@ -9,9 +9,6 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
 	}
 
 	return (
-		// <Stack spacing={2}>
-		// 	{/* <Pagination count={10} color="primary" /> */}
-		// </Stack>
 		<nav className="pagination-container">
 			<ul className="pagination">
 				{pageNumbers.map((num) => {
