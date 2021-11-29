@@ -35,8 +35,9 @@ const Tickets = ({ ticket }) => {
 					{ticket.subject}
 				</Typography>
 				<Typography sx={{ mb: 1.5 }} color="text.secondary">
-					Status: {ticket.status}
+					Status: {ticket.status} / Priority: {ticket.priority}
 				</Typography>
+
 				<Typography variant="body2">
 					Description: {ticket.description}
 				</Typography>

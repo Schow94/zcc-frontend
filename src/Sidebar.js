@@ -58,12 +58,6 @@ export default function MiniDrawer() {
 
 				<ListItem button>
 					<ListItemIcon>
-						<IoSettingsSharp className="icon" />
-					</ListItemIcon>
-				</ListItem>
-
-				<ListItem button>
-					<ListItemIcon>
 						<BiBuildings className="icon" />
 					</ListItemIcon>
 				</ListItem>
@@ -71,6 +65,12 @@ export default function MiniDrawer() {
 				<ListItem button>
 					<ListItemIcon>
 						<BsFillBarChartFill className="icon" />
+					</ListItemIcon>
+				</ListItem>
+
+				<ListItem button>
+					<ListItemIcon>
+						<IoSettingsSharp className="icon" />
 					</ListItemIcon>
 				</ListItem>
 			</Drawer>
